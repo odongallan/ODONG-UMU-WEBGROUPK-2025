@@ -1,0 +1,167 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+
+header {
+  background: green;
+  padding: 15px 0;
+}
+
+body {
+  background-color: black;
+}
+
+nav {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: black;
+}
+
+nav h2 {
+  color: black;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 25px;   
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: blue;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+nav ul li a:hover,
+nav ul li .active {
+  color: black;
+}
+
+
+.gallery {
+  width: 90%;
+  margin: 40px auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  transition: transform 0.5s;
+}
+
+
+.gallery-item:hover img {
+  transform: scale(1.1);
+}
+
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 10px;
+  background: rgba(0,0,0,0.6);
+  color: white;
+  text-align: center;
+  font-weight: bold;
+  font-size: 16px;
+  opacity: 0;
+  transition: 0.4s;
+}
+
+
+.gallery-item:hover .overlay {
+  opacity: 1;
+}
+
+
+.lightbox {
+  display: none; 
+  position: fixed;
+  z-index: 1000;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.9);
+}
+
+.lightbox-content {
+  display: block;
+  margin: auto;
+  max-width: 80%;
+  border-radius: 10px;
+}
+
+.close {
+  position: absolute;
+  top: 40px;
+  right: 60px;
+  color: white;
+  font-size: 40px;
+  cursor: pointer;
+}
+
+#caption {
+  text-align: center;
+  margin-top: 15px;
+  color: black;
+  font-size: 18px;
+}
+
+footer {
+  background: green;
+  color: white;
+  text-align: center;
+  padding: 25px 0;
+  margin-top: 50px;
+}
+
+footer p {
+  font-size: 15px;
+}
+
+footer a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+footer a:hover {
+  color: #00aaff;
+}
+
+@media(max-width: 700px){
+  nav {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  nav ul {
+    flex-wrap: wrap; 
+    justify-content: center;
+  }
+}
